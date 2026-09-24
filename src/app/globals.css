@@ -12,10 +12,23 @@
   --accent-secondary: #7fb8a4;
 }
 
+[data-theme="light"] {
+  --background: #faf6f3;
+  --surface: #ffffff;
+  --foreground: #2b1a1f;
+  --muted: #6b5a5e;
+  --border: #e0d0d4;
+
+  --accent: #b8863a;
+  --accent-glow: #d4a256;
+  --accent-secondary: #4a8f7a;
+}
+
 body {
   font-family: var(--font-mono), monospace;
   background: var(--background);
   color: var(--foreground);
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .glow-accent {

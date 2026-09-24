@@ -8,6 +8,7 @@ import Hobbies from "@/components/Hobbies";
 import Contact from "@/components/Contact";
 import Experience from "@/components/Experience";
 import Footer from "@/components/Footer";
+import CommandPalette from "@/components/CommandPalette";
 
 
 import { client } from "@/lib/sanity";
@@ -21,21 +22,24 @@ async function getBooks() {
 
 
 export default async function Home() {
-  
+
   const [recipes, books] = await Promise.all([getRecipes(), getBooks()]);
 
   return (
-    <main>
-      <Nav />
-      <Hero />
-      <About />
-      <Projects />
-      <Experience />
-      <GitHub />
-      <CodingStats />
-      <Hobbies recipes={recipes} books={books} />
-      <Contact />
-      <Footer />
-    </main>
+    <>
+      <CommandPalette />
+      <main>
+        <Nav />
+        <Hero />
+        <About />
+        <Projects />
+        <Experience />
+        <GitHub />
+        <CodingStats />
+        <Hobbies recipes={recipes} books={books} />
+        <Contact />
+        <Footer />
+      </main>
+    </>
   );
 }
